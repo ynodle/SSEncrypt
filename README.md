@@ -11,17 +11,15 @@ MDE5:f7653207090ce3389115e9c88541afe0
 # 使用方法
 单个
 ```
-Proxy = custom, 1.2.3.4, 443, chacha20-ietf-poly1305, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module, obfs=tls,obfs-host=yunjiasu-cdn.net
+Proxy = custom, 0.0.0.0, 443, aes-256-gcm, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module, obfs=tls,obfs-host=yunjiasu-cdn.net
 ```
 群组
 ```
 [Proxy]
-🇯🇵 JP = custom, 1.2.3.4, 443, chacha20-ietf-poly1305, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module, obfs=tls,obfs-host=yunjiasu-cdn.net
-🇸🇬 SG = custom, 1.2.3.4, 443, chacha20-ietf-poly1305, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module, obfs=tls,obfs-host=cloudfront.net
-🇰🇷 KR = custom, 1.2.3.4, 443, chacha20-ietf-poly1305, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module
-🇺🇸 US= custom, 1.2.3.4, 443, chacha20-ietf-poly1305, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module
+bwg = custom, 0.0.0.0, 443, aes-256-gcm, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module, obfs=tls,obfs-host=yunjiasu-cdn.net
+gcp = custom, 0.0.0.0, 443, aes-256-gcm, password, https://raw.githubusercontent.com/ynogle/SSEncrypt/master/SSEncrypt.module, obfs=tls,obfs-host=cloudfront.net
 
 [Proxy Group]
-Proxy = select,🕹 Auto,🇯🇵 JP,🇸🇬 SG,🇰🇷 KR,🇺🇸 US
-🕹 Auto = url-test,🇯🇵 JP,🇸🇬 SG,🇰🇷 KR,🇺🇸 US,url = http://www.gstatic.com/generate_204
+Proxy = select, Auto, bwg, gcp, 💊Direct
+Auto = url-test, bwg, gcp, url = http://www.gstatic.com/generate_204, interval = 300, timeout = 5, tolerance = 100
 ```
